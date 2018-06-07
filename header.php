@@ -23,11 +23,22 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'humescores' ); ?></a>
-
+        
+        <!-- Add the header image through the customizer if exist -->
+        <?php if( get_header_image() && is_front_page() ) : ?>
+            <figure class="header-image">
+                <?php the_header_image_tag(); ?>
+            </figure><!-- .header-image -->
+        <?php endif; ?>
+            
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
+                        # Add the custom logo through the customizer
 			the_custom_logo();
+                        ?>
+                        <div class="site-branding__text">
+                        <?php
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -42,13 +53,14 @@
 				?>
 				<p class="site-description"><?php echo $humescores_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
+                        </div><!-- .site-branding__text -->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'humescores' ); ?></button>
 			<?php
 			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
+				'theme_location' => 'header-menu',
 				'menu_id'        => 'primary-menu',
 			) );
 			?>

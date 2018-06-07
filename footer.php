@@ -27,6 +27,14 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'humescores' ), 'humescores', '<a href="http://underscores.me/">DeanNb</a>' );
 				?>
 		</div><!-- .site-info -->
+                <nav id="social-media-links" class="social-media-links">
+                    <?php
+                        wp_nav_menu( array(
+                        'theme_location' => 'footer-social-media-menu',
+                        'menu_id'        => 'footer-social-media-menu',
+                        ) );
+                    ?>
+                </nav><!-- #site-navigation -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
