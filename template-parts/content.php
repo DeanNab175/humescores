@@ -11,6 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+                <?php humescores_the_category_list(); ?>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -22,8 +23,10 @@
 			?>
 			<div class="entry-meta">
 				<?php
+                                humescores_posted_by();
 				humescores_posted_on();
-				humescores_posted_by();
+                                humescores_the_comments_count();
+                                humescores_edit_post_link()
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

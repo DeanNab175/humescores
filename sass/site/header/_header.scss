@@ -10,7 +10,7 @@
     position: relative;
     padding: 1em;
     font-family: $font__sans;
-    color: #fff;
+    color: $white;
     background-color: $color__skin;
 
     @media screen and (min-width: $query__small) {

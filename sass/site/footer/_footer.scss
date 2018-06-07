@@ -1,14 +1,16 @@
 .site-footer {
     display: block;
-    background: $footer_color__skin;
+    background: $color__skin;
     padding: 2em 1em;
+    font-family: $font__sans;
+    color: $white;
     
     @media screen and (min-width: $query__small) {
         display: flex;
     }
     
     a {
-        color: $color__skin;
+        color: $white;
         text-decoration: none;
         
         &:hover,
